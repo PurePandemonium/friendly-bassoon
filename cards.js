@@ -1,3 +1,9 @@
+function Card(name, types, cost) {
+	this.name = name;
+	this.types = types;
+	this.cost = cost;
+}
+
 let Deck = {
   cards: ["coin", "coin", "coin", "coin", "coin", "coin", "coin", "coin", "coin", "coin", "coin"],
   shuffle: function(){
