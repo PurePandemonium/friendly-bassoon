@@ -4,8 +4,21 @@ function Card(name, types, cost) {
 	this.cost = cost;
 }
 
+const INITIAL_DWARF_CARDS = [
+new Card("Urist", ["worker"], 3 ),
+new Card("Etur", ["worker"], 3 ),
+new Card("Sigun", ["worker"], 3 ),
+new Card("Dakost", ["worker"], 3 ),
+new Card("Litast", ["worker"], 3 ),
+new Card("Kogan", ["worker"], 3 ),
+new Card("Ingish", ["worker"], 3 )
+]
+
+function COIN_CARD() {return new Card("Coin", [currency], 0)};
+
+
 let Deck = {
-  cards: ["coin", "coin", "coin", "coin", "coin", "coin", "coin", "coin", "coin", "coin", "coin"],
+  cards: [new COIN_CARD(), COIN "coin", "coin", "coin", "coin", "coin", "coin", "coin", "coin", "coin", "coin"],
   shuffle: function(){
 	  // reference: https://stackoverflow.com/a/12646864
 	  
