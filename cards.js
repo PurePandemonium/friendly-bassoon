@@ -3,6 +3,10 @@ function Card(name, types, cost) {
 	this.types = types;
 	this.cost = cost;
 }
+let Types = {
+	currency: "Currency",
+	worker: "Worker"
+}
 
 const INITIAL_DWARF_CARDS = [
 new Card("Urist", ["worker"], 3 ),
@@ -14,13 +18,12 @@ new Card("Kogan", ["worker"], 3 ),
 new Card("Ingish", ["worker"], 3 )
 ]
 
-function COIN_CARD() {return new Card("Coin", [currency], 0)};
-
+function COIN_CARD() {return new Card("Coin", [Types.currency], 0)};
 
 let Deck = {
-  cards: [new COIN_CARD(), COIN "coin", "coin", "coin", "coin", "coin", "coin", "coin", "coin", "coin", "coin"],
+  cards: [new COIN_CARD(), new Card("Coin", [Types.currency], 0), {name: "Coin", types: [Types.currency], cost: 0}, "coin"],
   shuffle: function(){
-	  // reference: https://stackoverflow.com/a/12646864
+	  // shuffle algorithm reference: https://stackoverflow.com/a/12646864
 	  
 	for (let i = cards.length - 1; i > 0; i--) {
 		const j = Math.floor(Math.random() * (i + 1));
@@ -48,4 +51,14 @@ let discard = {
   empty: function(){cards = [];}
 };
 
-
+function DisplayHand() {
+	for (card of Deck.cards) {
+		console.log(card.name);
+		var inputElement = document.createElement('input');
+		inputElement.type = "button"
+		inputElement.addEventListener('click', function(){
+			console.log(card.name);
+		});
+		document.body.appendChild(inputElement);
+	}
+}

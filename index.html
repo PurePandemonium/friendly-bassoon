@@ -1,3 +1,4 @@
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
 <script src="cards.js"></script>
 <link rel=¨stylesheet¨ type=¨text/css¨ href=¨dorf.css¨>
 Hello Dwarves
@@ -5,24 +6,30 @@ Hello Dwarves
 <button>Forge</button>
 <button>Build</button>
 <button>
-  Study
+Study
 </button>
 <button>
-  Explore
+Explore
 </button>
 <button>
-  (Draw hand)
+(Draw hand)
 </button>
 <button>
 Shuffle deck
 </button>
-
+<button onclick="Deck.whynot()">
+Whynot
+</button>
+<button onclick="DisplayHand()">
+DisplayHand
+</button>
 <!--
 trade
 mine
 -->
 
 <br />
+<div id="cards">
 <button>
   Card 1
 </button>
@@ -38,3 +45,4 @@ mine
 <button>
   Card 5
 </button>
+</div>
